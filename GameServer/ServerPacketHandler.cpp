@@ -21,7 +21,7 @@ void ServerPacketHandler::Init()
 
 bool ServerPacketHandler::Handle_LoginRequest(shared_ptr<PacketSession>& session, Protocol::LoginRequest& packet)
 {
-    printf("Login request from: %s\n", packet.user_id().c_str());
+    printf("Login request from: %s\n", packet.userid().c_str());
 
     Protocol::LoginResponse response;
 
@@ -31,13 +31,13 @@ bool ServerPacketHandler::Handle_LoginRequest(shared_ptr<PacketSession>& session
     if (packet.token() != validToken) {
         // 2. 角菩 贸府
         response.set_success(false);
-        response.set_error_message("Invalid token");
-        printf("Login failed for %s - Invalid token\n", packet.user_id().c_str());
+        response.set_errormessage("Invalid token");
+        printf("Login failed for %s - Invalid token\n", packet.userid().c_str());
     }
     else {
         // 3. 己傍 贸府
         response.set_success(true);
-        printf("Login successful for %s\n", packet.user_id().c_str());
+        printf("Login successful for %s\n", packet.userid().c_str());
     }
 
     // 5. 览翠 傈价

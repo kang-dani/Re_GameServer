@@ -221,18 +221,18 @@ class LoginRequest final :
     kUserIdFieldNumber = 1,
     kTokenFieldNumber = 2,
   };
-  // string user_id = 1;
-  void clear_user_id();
-  const std::string& user_id() const;
+  // string userId = 1;
+  void clear_userid();
+  const std::string& userid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_user_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_user_id();
-  PROTOBUF_NODISCARD std::string* release_user_id();
-  void set_allocated_user_id(std::string* user_id);
+  void set_userid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_userid();
+  PROTOBUF_NODISCARD std::string* release_userid();
+  void set_allocated_userid(std::string* userid);
   private:
-  const std::string& _internal_user_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
-  std::string* _internal_mutable_user_id();
+  const std::string& _internal_userid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_userid(const std::string& value);
+  std::string* _internal_mutable_userid();
   public:
 
   // string token = 2;
@@ -257,7 +257,7 @@ class LoginRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr userid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -388,20 +388,36 @@ class LoginResponse final :
 
   enum : int {
     kErrorMessageFieldNumber = 2,
+    kUserNicknameFieldNumber = 3,
     kSuccessFieldNumber = 1,
+    kPlayerIDFieldNumber = 4,
   };
-  // string error_message = 2;
-  void clear_error_message();
-  const std::string& error_message() const;
+  // string errorMessage = 2;
+  void clear_errormessage();
+  const std::string& errormessage() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_error_message(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_error_message();
-  PROTOBUF_NODISCARD std::string* release_error_message();
-  void set_allocated_error_message(std::string* error_message);
+  void set_errormessage(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_errormessage();
+  PROTOBUF_NODISCARD std::string* release_errormessage();
+  void set_allocated_errormessage(std::string* errormessage);
   private:
-  const std::string& _internal_error_message() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_message(const std::string& value);
-  std::string* _internal_mutable_error_message();
+  const std::string& _internal_errormessage() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_errormessage(const std::string& value);
+  std::string* _internal_mutable_errormessage();
+  public:
+
+  // string userNickname = 3;
+  void clear_usernickname();
+  const std::string& usernickname() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_usernickname(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_usernickname();
+  PROTOBUF_NODISCARD std::string* release_usernickname();
+  void set_allocated_usernickname(std::string* usernickname);
+  private:
+  const std::string& _internal_usernickname() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_usernickname(const std::string& value);
+  std::string* _internal_mutable_usernickname();
   public:
 
   // bool success = 1;
@@ -413,6 +429,15 @@ class LoginResponse final :
   void _internal_set_success(bool value);
   public:
 
+  // int32 playerID = 4;
+  void clear_playerid();
+  int32_t playerid() const;
+  void set_playerid(int32_t value);
+  private:
+  int32_t _internal_playerid() const;
+  void _internal_set_playerid(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:Protocol.LoginResponse)
  private:
   class _Internal;
@@ -421,8 +446,10 @@ class LoginResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_message_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr errormessage_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr usernickname_;
     bool success_;
+    int32_t playerid_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2004,54 +2031,54 @@ class ActionResponse final :
 #endif  // __GNUC__
 // LoginRequest
 
-// string user_id = 1;
-inline void LoginRequest::clear_user_id() {
-  _impl_.user_id_.ClearToEmpty();
+// string userId = 1;
+inline void LoginRequest::clear_userid() {
+  _impl_.userid_.ClearToEmpty();
 }
-inline const std::string& LoginRequest::user_id() const {
-  // @@protoc_insertion_point(field_get:Protocol.LoginRequest.user_id)
-  return _internal_user_id();
+inline const std::string& LoginRequest::userid() const {
+  // @@protoc_insertion_point(field_get:Protocol.LoginRequest.userId)
+  return _internal_userid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void LoginRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+void LoginRequest::set_userid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.user_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.LoginRequest.user_id)
+ _impl_.userid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.LoginRequest.userId)
 }
-inline std::string* LoginRequest::mutable_user_id() {
-  std::string* _s = _internal_mutable_user_id();
-  // @@protoc_insertion_point(field_mutable:Protocol.LoginRequest.user_id)
+inline std::string* LoginRequest::mutable_userid() {
+  std::string* _s = _internal_mutable_userid();
+  // @@protoc_insertion_point(field_mutable:Protocol.LoginRequest.userId)
   return _s;
 }
-inline const std::string& LoginRequest::_internal_user_id() const {
-  return _impl_.user_id_.Get();
+inline const std::string& LoginRequest::_internal_userid() const {
+  return _impl_.userid_.Get();
 }
-inline void LoginRequest::_internal_set_user_id(const std::string& value) {
+inline void LoginRequest::_internal_set_userid(const std::string& value) {
   
-  _impl_.user_id_.Set(value, GetArenaForAllocation());
+  _impl_.userid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* LoginRequest::_internal_mutable_user_id() {
+inline std::string* LoginRequest::_internal_mutable_userid() {
   
-  return _impl_.user_id_.Mutable(GetArenaForAllocation());
+  return _impl_.userid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* LoginRequest::release_user_id() {
-  // @@protoc_insertion_point(field_release:Protocol.LoginRequest.user_id)
-  return _impl_.user_id_.Release();
+inline std::string* LoginRequest::release_userid() {
+  // @@protoc_insertion_point(field_release:Protocol.LoginRequest.userId)
+  return _impl_.userid_.Release();
 }
-inline void LoginRequest::set_allocated_user_id(std::string* user_id) {
-  if (user_id != nullptr) {
+inline void LoginRequest::set_allocated_userid(std::string* userid) {
+  if (userid != nullptr) {
     
   } else {
     
   }
-  _impl_.user_id_.SetAllocated(user_id, GetArenaForAllocation());
+  _impl_.userid_.SetAllocated(userid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.user_id_.IsDefault()) {
-    _impl_.user_id_.Set("", GetArenaForAllocation());
+  if (_impl_.userid_.IsDefault()) {
+    _impl_.userid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.LoginRequest.user_id)
+  // @@protoc_insertion_point(field_set_allocated:Protocol.LoginRequest.userId)
 }
 
 // string token = 2;
@@ -2128,54 +2155,124 @@ inline void LoginResponse::set_success(bool value) {
   // @@protoc_insertion_point(field_set:Protocol.LoginResponse.success)
 }
 
-// string error_message = 2;
-inline void LoginResponse::clear_error_message() {
-  _impl_.error_message_.ClearToEmpty();
+// string errorMessage = 2;
+inline void LoginResponse::clear_errormessage() {
+  _impl_.errormessage_.ClearToEmpty();
 }
-inline const std::string& LoginResponse::error_message() const {
-  // @@protoc_insertion_point(field_get:Protocol.LoginResponse.error_message)
-  return _internal_error_message();
+inline const std::string& LoginResponse::errormessage() const {
+  // @@protoc_insertion_point(field_get:Protocol.LoginResponse.errorMessage)
+  return _internal_errormessage();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void LoginResponse::set_error_message(ArgT0&& arg0, ArgT... args) {
+void LoginResponse::set_errormessage(ArgT0&& arg0, ArgT... args) {
  
- _impl_.error_message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.LoginResponse.error_message)
+ _impl_.errormessage_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.LoginResponse.errorMessage)
 }
-inline std::string* LoginResponse::mutable_error_message() {
-  std::string* _s = _internal_mutable_error_message();
-  // @@protoc_insertion_point(field_mutable:Protocol.LoginResponse.error_message)
+inline std::string* LoginResponse::mutable_errormessage() {
+  std::string* _s = _internal_mutable_errormessage();
+  // @@protoc_insertion_point(field_mutable:Protocol.LoginResponse.errorMessage)
   return _s;
 }
-inline const std::string& LoginResponse::_internal_error_message() const {
-  return _impl_.error_message_.Get();
+inline const std::string& LoginResponse::_internal_errormessage() const {
+  return _impl_.errormessage_.Get();
 }
-inline void LoginResponse::_internal_set_error_message(const std::string& value) {
+inline void LoginResponse::_internal_set_errormessage(const std::string& value) {
   
-  _impl_.error_message_.Set(value, GetArenaForAllocation());
+  _impl_.errormessage_.Set(value, GetArenaForAllocation());
 }
-inline std::string* LoginResponse::_internal_mutable_error_message() {
+inline std::string* LoginResponse::_internal_mutable_errormessage() {
   
-  return _impl_.error_message_.Mutable(GetArenaForAllocation());
+  return _impl_.errormessage_.Mutable(GetArenaForAllocation());
 }
-inline std::string* LoginResponse::release_error_message() {
-  // @@protoc_insertion_point(field_release:Protocol.LoginResponse.error_message)
-  return _impl_.error_message_.Release();
+inline std::string* LoginResponse::release_errormessage() {
+  // @@protoc_insertion_point(field_release:Protocol.LoginResponse.errorMessage)
+  return _impl_.errormessage_.Release();
 }
-inline void LoginResponse::set_allocated_error_message(std::string* error_message) {
-  if (error_message != nullptr) {
+inline void LoginResponse::set_allocated_errormessage(std::string* errormessage) {
+  if (errormessage != nullptr) {
     
   } else {
     
   }
-  _impl_.error_message_.SetAllocated(error_message, GetArenaForAllocation());
+  _impl_.errormessage_.SetAllocated(errormessage, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.error_message_.IsDefault()) {
-    _impl_.error_message_.Set("", GetArenaForAllocation());
+  if (_impl_.errormessage_.IsDefault()) {
+    _impl_.errormessage_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.LoginResponse.error_message)
+  // @@protoc_insertion_point(field_set_allocated:Protocol.LoginResponse.errorMessage)
+}
+
+// string userNickname = 3;
+inline void LoginResponse::clear_usernickname() {
+  _impl_.usernickname_.ClearToEmpty();
+}
+inline const std::string& LoginResponse::usernickname() const {
+  // @@protoc_insertion_point(field_get:Protocol.LoginResponse.userNickname)
+  return _internal_usernickname();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LoginResponse::set_usernickname(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.usernickname_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.LoginResponse.userNickname)
+}
+inline std::string* LoginResponse::mutable_usernickname() {
+  std::string* _s = _internal_mutable_usernickname();
+  // @@protoc_insertion_point(field_mutable:Protocol.LoginResponse.userNickname)
+  return _s;
+}
+inline const std::string& LoginResponse::_internal_usernickname() const {
+  return _impl_.usernickname_.Get();
+}
+inline void LoginResponse::_internal_set_usernickname(const std::string& value) {
+  
+  _impl_.usernickname_.Set(value, GetArenaForAllocation());
+}
+inline std::string* LoginResponse::_internal_mutable_usernickname() {
+  
+  return _impl_.usernickname_.Mutable(GetArenaForAllocation());
+}
+inline std::string* LoginResponse::release_usernickname() {
+  // @@protoc_insertion_point(field_release:Protocol.LoginResponse.userNickname)
+  return _impl_.usernickname_.Release();
+}
+inline void LoginResponse::set_allocated_usernickname(std::string* usernickname) {
+  if (usernickname != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.usernickname_.SetAllocated(usernickname, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.usernickname_.IsDefault()) {
+    _impl_.usernickname_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Protocol.LoginResponse.userNickname)
+}
+
+// int32 playerID = 4;
+inline void LoginResponse::clear_playerid() {
+  _impl_.playerid_ = 0;
+}
+inline int32_t LoginResponse::_internal_playerid() const {
+  return _impl_.playerid_;
+}
+inline int32_t LoginResponse::playerid() const {
+  // @@protoc_insertion_point(field_get:Protocol.LoginResponse.playerID)
+  return _internal_playerid();
+}
+inline void LoginResponse::_internal_set_playerid(int32_t value) {
+  
+  _impl_.playerid_ = value;
+}
+inline void LoginResponse::set_playerid(int32_t value) {
+  _internal_set_playerid(value);
+  // @@protoc_insertion_point(field_set:Protocol.LoginResponse.playerID)
 }
 
 // -------------------------------------------------------------------
