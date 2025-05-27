@@ -7,16 +7,17 @@ import "Struct.proto";
 
 // 로그인 요청 (웹 인증 기반)
 message LoginRequest {
-    string userId = 1;       // 유저 이름
-    string token = 2;          // 웹에서 발급된 인증 토큰
+    string userId = 1;          // 유저 아이디
+    string token = 2;           // 웹에서 발급된 인증 토큰
+    string userNickname = 3;    // 유저 닉네임
 }
 
 // 로그인 응답
 message LoginResponse {
     bool success = 1;          // 성공 여부
     string errorMessage = 2;  // 실패 시 에러 메시지
-    string userNickname = 3;
-    int32 playerID = 4;
+    string userId = 3;
+    string userNickname = 4;
 }
 
 // 게임 입장 요청 

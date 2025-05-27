@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
         return res.json({
             success: true,
             userId : userId,
-            userNickname: '더미유저',
+            userNickname: 'user1',
             playerID: 1
         });
     }

@@ -220,6 +220,7 @@ class LoginRequest final :
   enum : int {
     kUserIdFieldNumber = 1,
     kTokenFieldNumber = 2,
+    kUserNicknameFieldNumber = 3,
   };
   // string userId = 1;
   void clear_userid();
@@ -249,6 +250,20 @@ class LoginRequest final :
   std::string* _internal_mutable_token();
   public:
 
+  // string userNickname = 3;
+  void clear_usernickname();
+  const std::string& usernickname() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_usernickname(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_usernickname();
+  PROTOBUF_NODISCARD std::string* release_usernickname();
+  void set_allocated_usernickname(std::string* usernickname);
+  private:
+  const std::string& _internal_usernickname() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_usernickname(const std::string& value);
+  std::string* _internal_mutable_usernickname();
+  public:
+
   // @@protoc_insertion_point(class_scope:Protocol.LoginRequest)
  private:
   class _Internal;
@@ -259,6 +274,7 @@ class LoginRequest final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr userid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr usernickname_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -388,9 +404,9 @@ class LoginResponse final :
 
   enum : int {
     kErrorMessageFieldNumber = 2,
-    kUserNicknameFieldNumber = 3,
+    kUserIdFieldNumber = 3,
+    kUserNicknameFieldNumber = 4,
     kSuccessFieldNumber = 1,
-    kPlayerIDFieldNumber = 4,
   };
   // string errorMessage = 2;
   void clear_errormessage();
@@ -406,7 +422,21 @@ class LoginResponse final :
   std::string* _internal_mutable_errormessage();
   public:
 
-  // string userNickname = 3;
+  // string userId = 3;
+  void clear_userid();
+  const std::string& userid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_userid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_userid();
+  PROTOBUF_NODISCARD std::string* release_userid();
+  void set_allocated_userid(std::string* userid);
+  private:
+  const std::string& _internal_userid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_userid(const std::string& value);
+  std::string* _internal_mutable_userid();
+  public:
+
+  // string userNickname = 4;
   void clear_usernickname();
   const std::string& usernickname() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -429,15 +459,6 @@ class LoginResponse final :
   void _internal_set_success(bool value);
   public:
 
-  // int32 playerID = 4;
-  void clear_playerid();
-  int32_t playerid() const;
-  void set_playerid(int32_t value);
-  private:
-  int32_t _internal_playerid() const;
-  void _internal_set_playerid(int32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:Protocol.LoginResponse)
  private:
   class _Internal;
@@ -447,9 +468,9 @@ class LoginResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr errormessage_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr userid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr usernickname_;
     bool success_;
-    int32_t playerid_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2131,6 +2152,56 @@ inline void LoginRequest::set_allocated_token(std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:Protocol.LoginRequest.token)
 }
 
+// string userNickname = 3;
+inline void LoginRequest::clear_usernickname() {
+  _impl_.usernickname_.ClearToEmpty();
+}
+inline const std::string& LoginRequest::usernickname() const {
+  // @@protoc_insertion_point(field_get:Protocol.LoginRequest.userNickname)
+  return _internal_usernickname();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LoginRequest::set_usernickname(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.usernickname_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.LoginRequest.userNickname)
+}
+inline std::string* LoginRequest::mutable_usernickname() {
+  std::string* _s = _internal_mutable_usernickname();
+  // @@protoc_insertion_point(field_mutable:Protocol.LoginRequest.userNickname)
+  return _s;
+}
+inline const std::string& LoginRequest::_internal_usernickname() const {
+  return _impl_.usernickname_.Get();
+}
+inline void LoginRequest::_internal_set_usernickname(const std::string& value) {
+  
+  _impl_.usernickname_.Set(value, GetArenaForAllocation());
+}
+inline std::string* LoginRequest::_internal_mutable_usernickname() {
+  
+  return _impl_.usernickname_.Mutable(GetArenaForAllocation());
+}
+inline std::string* LoginRequest::release_usernickname() {
+  // @@protoc_insertion_point(field_release:Protocol.LoginRequest.userNickname)
+  return _impl_.usernickname_.Release();
+}
+inline void LoginRequest::set_allocated_usernickname(std::string* usernickname) {
+  if (usernickname != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.usernickname_.SetAllocated(usernickname, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.usernickname_.IsDefault()) {
+    _impl_.usernickname_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Protocol.LoginRequest.userNickname)
+}
+
 // -------------------------------------------------------------------
 
 // LoginResponse
@@ -2205,7 +2276,57 @@ inline void LoginResponse::set_allocated_errormessage(std::string* errormessage)
   // @@protoc_insertion_point(field_set_allocated:Protocol.LoginResponse.errorMessage)
 }
 
-// string userNickname = 3;
+// string userId = 3;
+inline void LoginResponse::clear_userid() {
+  _impl_.userid_.ClearToEmpty();
+}
+inline const std::string& LoginResponse::userid() const {
+  // @@protoc_insertion_point(field_get:Protocol.LoginResponse.userId)
+  return _internal_userid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LoginResponse::set_userid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.userid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.LoginResponse.userId)
+}
+inline std::string* LoginResponse::mutable_userid() {
+  std::string* _s = _internal_mutable_userid();
+  // @@protoc_insertion_point(field_mutable:Protocol.LoginResponse.userId)
+  return _s;
+}
+inline const std::string& LoginResponse::_internal_userid() const {
+  return _impl_.userid_.Get();
+}
+inline void LoginResponse::_internal_set_userid(const std::string& value) {
+  
+  _impl_.userid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* LoginResponse::_internal_mutable_userid() {
+  
+  return _impl_.userid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* LoginResponse::release_userid() {
+  // @@protoc_insertion_point(field_release:Protocol.LoginResponse.userId)
+  return _impl_.userid_.Release();
+}
+inline void LoginResponse::set_allocated_userid(std::string* userid) {
+  if (userid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.userid_.SetAllocated(userid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.userid_.IsDefault()) {
+    _impl_.userid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Protocol.LoginResponse.userId)
+}
+
+// string userNickname = 4;
 inline void LoginResponse::clear_usernickname() {
   _impl_.usernickname_.ClearToEmpty();
 }
@@ -2253,26 +2374,6 @@ inline void LoginResponse::set_allocated_usernickname(std::string* usernickname)
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:Protocol.LoginResponse.userNickname)
-}
-
-// int32 playerID = 4;
-inline void LoginResponse::clear_playerid() {
-  _impl_.playerid_ = 0;
-}
-inline int32_t LoginResponse::_internal_playerid() const {
-  return _impl_.playerid_;
-}
-inline int32_t LoginResponse::playerid() const {
-  // @@protoc_insertion_point(field_get:Protocol.LoginResponse.playerID)
-  return _internal_playerid();
-}
-inline void LoginResponse::_internal_set_playerid(int32_t value) {
-  
-  _impl_.playerid_ = value;
-}
-inline void LoginResponse::set_playerid(int32_t value) {
-  _internal_set_playerid(value);
-  // @@protoc_insertion_point(field_set:Protocol.LoginResponse.playerID)
 }
 
 // -------------------------------------------------------------------

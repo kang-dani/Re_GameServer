@@ -21,7 +21,7 @@ void ServerPacketHandler::Init()
 
 bool ServerPacketHandler::Handle_LoginRequest(shared_ptr<PacketSession>& session, Protocol::LoginRequest& packet)
 {
-    printf("Login request from: %s\n", packet.userid().c_str());
+    printf("\nLogin request from: %s\n", packet.userid().c_str());
 
     Protocol::LoginResponse response;
 
@@ -37,7 +37,11 @@ bool ServerPacketHandler::Handle_LoginRequest(shared_ptr<PacketSession>& session
     else {
         // 3. 己傍 贸府
         response.set_success(true);
+        response.set_userid(packet.userid().c_str());
+		response.set_usernickname(packet.usernickname().c_str());
+
         printf("Login successful for %s\n", packet.userid().c_str());
+		printf("Welcome %s!\n", packet.usernickname().c_str());
     }
 
     // 5. 览翠 傈价
