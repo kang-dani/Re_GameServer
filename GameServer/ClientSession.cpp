@@ -7,6 +7,7 @@
 void ClientSession::OnConnected()
 {
     SessionManager::Get().Add(GetClientSession());
+	printf("클라이언트 연결 됨\n");
 }
 
 int ClientSession::OnRecvPacket(BYTE* buffer, int len)

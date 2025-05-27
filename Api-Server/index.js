@@ -15,5 +15,5 @@ app.use('/api', require('./routes/auth')); // 경로 라우터 등록
 
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`✅ API Server running on http://localhost:${PORT}`);
+    console.log(`API Server running on http://localhost:${PORT}`);
 });

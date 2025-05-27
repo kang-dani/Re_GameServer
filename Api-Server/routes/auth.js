@@ -68,6 +68,7 @@ router.post('/login', async (req, res) => {
     if (userId === 'player1' && password === 'abc123') {
         return res.json({
             success: true,
+            userId : userId,
             userNickname: '더미유저',
             playerID: 1
         });
