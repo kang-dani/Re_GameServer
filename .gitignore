@@ -471,5 +471,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Node.js API 서버
-/Api-Server/node_modules/
-/Api-Server/.env
+Api-Server/node_modules/
+Api-Server/.env
