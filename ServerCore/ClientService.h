@@ -12,4 +12,3 @@ public:
 public:
 	virtual bool Start() override;
 };
-
