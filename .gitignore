@@ -473,3 +473,4 @@ crashlytics-build.properties
 # Node.js API 서버
 Api-Server/node_modules/
 Api-Server/.env
+/Api-Server/.env
